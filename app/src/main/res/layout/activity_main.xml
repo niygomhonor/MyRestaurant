@@ -29,14 +29,29 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="MyRestaurants"
+        android:text="Neodo's Cafe Shop"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="35dp"
+        android:fontFamily="sans-serif-condensed-light"
         android:id="@+id/appNameTextView"
         android:textColor="@color/colorTextIcons"
         android:textSize="40sp"
         android:textStyle="bold"/>
+<!--    <GridView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:columnWidth="50sp"-->
+<!--        android:numColumns="auto_fit"-->
+<!--        android:stretchMode="spacingWidthUniform"-->
+<!--        android:id="@+id/baseGridView"-->
+<!--        android:padding="0dp"-->
+<!--        android:gravity="left"-->
+<!--        android:scrollingCache="false"-->
+<!--        android:layout_alignParentTop="true"-->
+<!--        android:layout_alignParentLeft="true"-->
+<!--        android:layout_alignParentStart="true"-->
+<!--        android:layout_marginTop="40sp" />-->
 
     <EditText
         android:layout_width="wrap_content"
@@ -49,6 +64,7 @@
         android:hint="Enter Zip Code"
         android:layout_centerHorizontal="true" />
 
+
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -57,7 +73,6 @@
         android:background="@color/colorAccent"
         android:text="Find Restaurants"
         android:id="@+id/findRestaurantsButton"
-
         android:textColor="@color/colorTextIcons"/>
 
 </RelativeLayout>
