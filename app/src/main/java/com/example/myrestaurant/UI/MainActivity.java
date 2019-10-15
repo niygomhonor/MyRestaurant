@@ -1,19 +1,17 @@
-package com.example.myrestaurant;
+package com.example.myrestaurant.UI;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.GridView;
-import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.myrestaurant.R;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -44,15 +42,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 //        mAppNameTextView.setTypeface(caviarFont);
         mFindRestaurantsButton.setOnClickListener(this);
         Typeface typeface = Typeface.createFromAsset(getAssets(), "font/delighter.otf"); //change
-//        gridView = (GridView) findViewById(R.id.baseGridView);
-//        gridView = (GridView) findViewById(R.id.baseGridView);
-//        gridView.setAdapter(new AlphabetAdapter(this, letters));
+
     }
-//        mFindRestaurantsButton.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View v) {
                 if (v==mFindRestaurantsButton){
-                Intent intent=new Intent(MainActivity.this,RestorActivity.class);
+                Intent intent=new Intent(MainActivity.this, RestorActivity.class);
                 String location=mLocationEditText.getText().toString();
 //
                 Toast.makeText(MainActivity.this,location, Toast.LENGTH_LONG).show();
