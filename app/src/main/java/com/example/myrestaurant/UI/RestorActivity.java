@@ -1,28 +1,19 @@
 package com.example.myrestaurant.UI;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.widget.Toast;
-
 import com.example.myrestaurant.Adapters.RestaurantListAdapter;
-
-
 import com.example.myrestaurant.R;
 import com.example.myrestaurant.Network.YelpApi;
 import com.example.myrestaurant.Network.YelpClient;
-
 import com.example.myrestaurant.models.Business;
 import com.example.myrestaurant.models.YelpBusinessesSearchResponse;
-
 import java.util.List;
-
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import retrofit2.Call;
@@ -54,18 +45,7 @@ protected void onCreate(Bundle savedInstanceState) {
         @Override
         public void onResponse(Call<YelpBusinessesSearchResponse> call, Response<YelpBusinessesSearchResponse> response) {
             if (response.isSuccessful()) {
-//                List<Business> restaurantsList = response.body().getBusinesses();
-//                String[] restaurants = new String[restaurantsList.size()];
-//                String[] categories = new String[restaurantsList.size()];
-//
-//                for (int i = 0; i < restaurants.length; i++){
-//                    restaurants[i] = restaurantsList.get(i).getName();
-//                }
-//
-//                for (int i = 0; i < categories.length; i++) {
-//                    Category category = restaurantsList.get(i).getCategories().get(0);
-//                    categories[i] = category.getTitle();
-//                }
+
 
                 restaurants = response.body().getBusinesses();
                 mAdapter = new RestaurantListAdapter(RestorActivity.this, restaurants);
@@ -75,9 +55,6 @@ protected void onCreate(Bundle savedInstanceState) {
                 mRecyclerView.setLayoutManager(layoutManager);
                 mRecyclerView.setHasFixedSize(true);
 
-//                ArrayAdapter adapter
-//                        = new MyRestaurantsArrayAdapter(RestorActivity.this, android.R.layout.simple_list_item_1, restaurants, categories);
-//                mListView.setAdapter(adapter);
                 showRestaurants();
                 hideProgressBar();
             }

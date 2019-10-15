@@ -71,7 +71,7 @@ public class RestaurantListAdapter extends RecyclerView.Adapter<RestaurantListAd
 
         public void bindRestaurant(Business restaurant) {
             mNameTextView.setText(restaurant.getName());
-            mCategoryTextView.setText((CharSequence) restaurant.getCategories().get(0));
+//           mCategoryTextView.setText((CharSequence) restaurant.getCategories());  for tommorow
             mRatingTextView.setText("Rating: " + restaurant.getRating() + "/5");
             Picasso.get().load(restaurant.getImageUrl()).into(mRestaurantImageView);
         }

@@ -6,8 +6,6 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 import com.example.myrestaurant.UI.RestaurantDetailFragment;
 import com.example.myrestaurant.models.Business;
-
-import java.util.ArrayList;
 import java.util.List;
 
 public class RestaurantPagerAdapter extends FragmentPagerAdapter {
