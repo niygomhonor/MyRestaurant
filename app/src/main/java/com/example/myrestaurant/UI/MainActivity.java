@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.text.InputType;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -17,29 +18,18 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
-//    public static final String TAG =MainActivity.class.getSimpleName();
-//private Button mFindRestaurantsButton;
-//private EditText mLocationEditText;
-//    private TextView mAppNameTextView;
-//GridView gridView;
-//    String[] letters = new String[] {
-//            "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"};
+
 @BindView(R.id.findRestaurantsButton) Button mFindRestaurantsButton;
-    @BindView(R.id.locationEditText) EditText mLocationEditText;
+//    @BindView(R.id.locationEditText) EditText mLocationEditText;
+    private EditText mLocationEditText;
     @BindView(R.id.appNameTextView) TextView mAppNameTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-//        mLocationEditText=(EditText)findViewById(R.id.locationEditText);
-//        mFindRestaurantsButton =(Button)findViewById(R.id.findRestaurantsButton);
-//        mAppNameTextView = (TextView) findViewById(R.id.appNameTextView);
-
+mLocationEditText=(EditText) findViewById(R.id.locationEditText);
         ButterKnife.bind(this);
-//        Typeface caviarFont = Typeface.createFromAsset(getAssets(), "fonts/CaviarDreams.ttf");
-//        mAppNameTextView.setTypeface(caviarFont);
         mFindRestaurantsButton.setOnClickListener(this);
         Typeface typeface = Typeface.createFromAsset(getAssets(), "font/delighter.otf"); //change
 
@@ -50,9 +40,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 if (v==mFindRestaurantsButton){
                 Intent intent=new Intent(MainActivity.this, RestorActivity.class);
                 String location=mLocationEditText.getText().toString();
-//
+//                    location.(InputType.TYPE_CLASS_TEXT|InputType.TYPE_TEXT_FLAG_NO_SUGGESTIONS);
                 Toast.makeText(MainActivity.this,location, Toast.LENGTH_LONG).show();
                 intent.putExtra("location",location);
+
                 startActivity(intent);
             }
 

@@ -11,7 +11,7 @@ import java.util.List;
 public class RestaurantPagerAdapter extends FragmentPagerAdapter {
     private List<Business> mRestaurants;
 
-    public RestaurantPagerAdapter(FragmentManager fm, int behavior, List<Business> restaurants) {
+    public RestaurantPagerAdapter(FragmentManager fm, List<Business> restaurants) {
         super(fm);
         mRestaurants = restaurants;
     }
